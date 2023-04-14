@@ -1,0 +1,7 @@
+.formlogin{
+    height: 250px;
+    background-color: #EEE;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}

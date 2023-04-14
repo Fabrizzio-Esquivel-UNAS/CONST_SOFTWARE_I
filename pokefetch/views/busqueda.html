@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://localhost/pokefetch/css/style.css">
+    <title>PokeBuscador</title>
+</head>
+<body>
+    <div class="busqueda">
+        <form action="javascript:void(0)" id="formulario" name="formulario">
+            <input type="text" placeholder="Nombre o Id de un Pokemon" name="texto" id="texto">
+            <input type="button" value="Buscar" name="boton" id="boton">
+            <p name="estado" id="estado"></p>
+        </form>
+    </div>
+    <div>
+        <div class="poketabla">
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="4" id="poketitulo">Nombre #ID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Tipo</th>
+                        <td id="poketipo">Pokemon</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Movimientos</th>
+                        <td id="pokemov">Pokemon</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="http://localhost/pokefetch/js/busqueda.js"></script>    
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titulo de Ejemplo2</title>
+    <link rel="stylesheet" href="http://localhost/ejemplo2/css/estilo.css">
+</head>
+<body>
+    <!-- recuerden post envia los datos dentro del body y get envia los datos en la url -->
+    <div class="formlogin">
+        <form>
+            <input name="usuario" id="usuario" type="text" placeholder="escribe tu usuario">
+            <br><br>
+            <input name="clave" id="clave" type="password" placeholder="Contraseña">
+            <br><br>
+            <input type="button" name="boton" id="boton" value="Iniciar sesión">
+        </form>
+    </div>
+    <script>
+        const direccion = "http://localhost/ejemplo2/controllers/validar.php"
+         function ajax(){
+            let datos = new FormData();
+            datos.append("usuario", document.getElementById("usuario").value);
+            datos.append("clave", document.getElementById("clave").value)
+            fetch(direccion, {method:"POST", body:datos})
+            .then(respuesta => {
+                if (respuesta.ok){return respuesta.text()}
+                else{console.log("ERROR "+respuesta.status+" "+respuesta.statusText)}
+            })
+            .then(
+                resultado => {console.log(resultado)}
+            )
+            .catch(error => {console.error(error)})
+         }
+         document.getElementById("boton").addEventListener("click", ajax);
+    </script>
+</body>
+</html>
